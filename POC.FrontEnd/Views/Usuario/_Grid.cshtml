@@ -1,0 +1,30 @@
+﻿<div  class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nf-table id="myTable"
+                          v-bind:data="data"
+                          v-bind:mode="mode"
+                          v-bind:columns="configColumns"
+                          v-bind:select="select"
+                          v-bind:responsive="responsive"
+                          v-on:created-row="createdRow"
+                          v-on:selected-row="selectedRow"
+                          ref="ABMtable"
+                          v-on:unselected-row="selectedRow">
+                    <div slot="toolbar">
+                        @await Html.PartialAsync("~/Views/Common/_BotoneraTable.cshtml")
+                    </div>
+                </nf-table>
+            </div>
+        </div>
+        
+        <nf-modal ref="modal">
+            @await Html.PartialAsync("~/Views/Usuario/_Form.cshtml");
+        </nf-modal>
+        
+        <nf-modal ref="detailModal">
+            @await Html.PartialAsync("~/Views/Usuario/_Detail.cshtml");
+        </nf-modal>
+    </div>
+</div>
